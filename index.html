@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#f0f5ed">
+  <meta name="description" content="A welcoming workspace for managing your church community.">
+  <title>Grace Community — Church management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="theme.css">
+</head>
+<body>
+<svg class="icons" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="grid" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="2"/><rect x="14" y="3" width="7" height="7" rx="2"/><rect x="3" y="14" width="7" height="7" rx="2"/><rect x="14" y="14" width="7" height="7" rx="2"/></symbol>
+  <symbol id="users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="10" cy="7" r="4"/><path d="M20 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 11h18"/></symbol>
+  <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+  <symbol id="heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1L12 21l7.8-7.5 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></symbol>
+  <symbol id="search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol><symbol id="plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+  <symbol id="clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="pin" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+</svg>
+<div class="shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#dashboard"><span class="brand-icon">✳</span><span id="brand-name">Grace Community</span></a>
+    <button class="church-picker" id="workspace-picker" type="button" aria-label="Switch church workspace"><span class="church-avatar" id="church-avatar">GC</span><span class="church-picker-copy"><span id="church-name">Grace Community</span><small>Church workspace</small></span><span class="chevron">⌄</span></button>
+    <div class="nav-label">WORKSPACE</div>
+    <nav>
+      <a class="nav-link" href="#dashboard" data-view="dashboard"><svg><use href="#grid"/></svg>Overview</a>
+      <a class="nav-link" href="#members" data-view="members"><svg><use href="#users"/></svg>Members<span class="count" id="member-count">0</span></a>
+      <a class="nav-link" href="#attendance" data-view="attendance"><svg><use href="#check"/></svg>Attendance</a>
+      <a class="nav-link" href="#events" data-view="events"><svg><use href="#calendar"/></svg>Events</a>
+      <a class="nav-link" href="#giving" data-view="giving"><svg><use href="#heart"/></svg>Giving</a>
+      <div class="nav-label admin-nav-label">ADMINISTRATION</div>
+      <a class="nav-link" href="#records" data-view="records"><svg><use href="#calendar"/></svg>Life event records<span class="count" id="records-count">0</span></a>
+    </nav>
+    <div class="sidebar-bottom"><div class="help-card"><span>✦</span><strong>Here for your community</strong><p>Keep your church connected and growing, all in one place.</p><button data-view="members">Explore members →</button></div><div class="profile"><span class="avatar">JM</span><span><b>Jordan Mitchell</b><small>Administrator</small></span><span class="dots">···</span></div></div>
+  </aside>
+  <main>
+    <header class="topbar"><button id="menu" class="icon-btn mobile-menu" aria-label="Open menu">☰</button><div class="breadcrumb"><span id="church-breadcrumb">Grace Community</span><span>/</span><b id="crumb">Overview</b></div><div class="top-actions"><label class="search"><svg><use href="#search"/></svg><input id="global-search" type="search" placeholder="Search anything..." aria-label="Search anything"><kbd>⌘ K</kbd></label><button class="icon-btn" aria-label="Notifications">♧<i></i></button><span class="avatar top-avatar">JM</span></div></header>
+    <div class="content">
+      <section class="view" id="view-dashboard">
+        <div class="welcome"><div><p class="eyebrow" id="today-label"></p><h1>Good morning, Jordan <span class="sun">✳</span></h1><p class="subtitle">Here’s what’s happening in your community this week.</p></div><button class="button primary" data-action="add-member"><svg><use href="#plus"/></svg> Add a member</button></div>
+        <div class="stats">
+          <article class="stat"><div class="stat-top">Total members <span class="stat-icon purple"><svg><use href="#users"/></svg></span></div><strong id="stat-members">0</strong><small><b>↗ 8.2%</b> from last month</small><div class="spark purple-line">⌁⌁⌁⌁⌁⌁</div></article>
+          <article class="stat"><div class="stat-top">Sunday attendance <span class="stat-icon mint"><svg><use href="#check"/></svg></span></div><strong id="stat-attendance">0</strong><small><b>↗ 5.4%</b> vs. last Sunday</small><div class="spark mint-line">⌁⌁⌁⌁⌁⌁</div></article>
+          <article class="stat"><div class="stat-top">Giving this month <span class="stat-icon peach"><svg><use href="#heart"/></svg></span></div><strong id="stat-giving">$0</strong><small><b>↗ 12.8%</b> vs. last month</small><div class="spark peach-line">⌁⌁⌁⌁⌁⌁</div></article>
+          <article class="stat"><div class="stat-top">Upcoming events <span class="stat-icon blue"><svg><use href="#calendar"/></svg></span></div><strong id="stat-events">0</strong><small><b class="neutral">Next up</b> <span id="next-event">This week</span></small><div class="spark blue-line">⌁⌁⌁⌁⌁⌁</div></article>
+        </div>
+        <div class="dashboard-grid">
+          <article class="panel attendance-panel"><div class="panel-head"><div><h2>Attendance overview</h2><p>Weekly service attendance</p></div><select id="period" class="select"><option>Last 8 weeks</option><option>Last 4 weeks</option></select></div><div class="chart-total"><strong id="chart-total">0</strong><span>people this Sunday <b>↗ 5.4%</b></span></div><div class="chart-wrap"><div class="y-labels"><span>300</span><span>200</span><span>100</span><span>0</span></div><div class="chart" id="chart"></div></div></article>
+          <article class="panel"><div class="panel-head"><div><h2>Coming up</h2><p>Events at your church</p></div><button class="text-btn" data-view="events">See all →</button></div><div id="upcoming" class="upcoming"></div><button class="add-event" data-action="add-event"><svg><use href="#plus"/></svg> Create an event</button></article>
+        </div>
+        <div class="bottom-grid"><article class="panel"><div class="panel-head"><div><h2>New members</h2><p>Welcome them to the family</p></div><button class="text-btn" data-view="members">View all →</button></div><div id="recent-members"></div></article><article class="panel"><div class="panel-head"><div><h2>Recent giving</h2><p>Generosity in your community</p></div><button class="text-btn" data-view="giving">View all →</button></div><div id="recent-giving"></div></article></div>
+        <section class="life-events-spotlight"><div class="spotlight-copy"><span class="spotlight-mark">✦</span><div><p class="eyebrow">MILESTONES WORTH CELEBRATING</p><h2>Keep every special moment close.</h2><p>One thoughtful place for baptism cards and marriage certificates.</p></div></div><div class="spotlight-actions"><button class="button soft-button" data-action="add-baptism">＋ Record a baptism</button><button class="button light-button" data-action="add-marriage">＋ Add a marriage</button><button class="spotlight-link" data-view="records">Open records →</button></div></section>
+        <footer>Made with care for communities that care <span>✳</span></footer>
+      </section>
+      <section class="view" id="view-members"><div id="members-view"></div></section>
+      <section class="view" id="view-attendance"><div id="attendance-view"></div></section>
+      <section class="view" id="view-events"><div id="events-view"></div></section>
+      <section class="view" id="view-giving"><div id="giving-view"></div></section>
+      <section class="view" id="view-records"><div id="records-view"></div></section>
+    </div>
+  </main>
+</div>
+<div class="backdrop" id="backdrop" hidden><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-head"><div><p class="eyebrow">GRACE COMMUNITY</p><h2 id="modal-title"></h2></div><button class="close" type="button" aria-label="Close">×</button></div><form id="form"><div id="fields"></div><p id="form-error" class="error" role="alert"></p><div class="modal-actions"><button type="button" class="button secondary close">Cancel</button><button class="button primary" id="submit">Save</button></div></form></section></div>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<script src="app.js"></script>
+</body>
+</html>
